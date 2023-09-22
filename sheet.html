@@ -1,0 +1,7 @@
+<!-- ADD in Google sheet extention -->
+
+const sheets = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1LUFwTDRZXovN7X2T_XnDKTqI-mciF7NGg8118ihZ1hA/edit#gid=0"); const sheet = sheets.getSheetByName("Sheet1"); function doPost(e) {
+    let data = e.parameter;
+    sheet.appendRow( [data.code,data.phone]);
+    return ContentService.createTextOutput("Success");
+    }
